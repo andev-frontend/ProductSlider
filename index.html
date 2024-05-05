@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title>Product Slide</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card-product">
+                    <div class="image-product">
+                        <img src="./image/polo1.1.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">
+                            Áo Polo Nam Pique Mắt Chim Basic Co Giãn Thoáng Khí
+                        </h3>
+                        <div class="box-price">
+                            <span class="discout-price">
+                                284.000đ
+                            </span>
+                            <span class="compare-price">
+                                299.000đ
+                            </span>
+                        </div>
+                        <div class="option-swath">
+                            <div class="swath-color active">
+                                <img src="./image/polo1.1.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo1.2.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo1.3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide card-product">
+                    <div class="image-product">
+                        <img src="./image/polo2.1.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">
+                            Polo Nam Cafe Dệt Tổ Ong Phối Dây Dệt
+                        </h3>
+                        <div class="box-price">
+                            <span class="discout-price">
+                                350.000đ
+                            </span>
+                            <span class="compare-price">
+                                369.000đ
+                            </span>
+                        </div>
+                        <div class="option-swath">
+                            <div class="swath-color active">
+                                <img src="./image/polo2.1.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo2.2.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo2.3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide card-product">
+                    <div class="image-product">
+                        <img src="./image/polo3.1.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">
+                            Áo Polo Nam Airycool Giữ Form Thoáng Mát
+                        </h3>
+                        <div class="box-price">
+                            <span class="discout-price">
+                                284.000đ
+                            </span>
+                            <span class="compare-price">
+                                299.000đ
+                            </span>
+                        </div>
+                        <div class="option-swath">
+                            <div class="swath-color active">
+                                <img src="./image/polo3.1.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo3.2.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo3.3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide card-product">
+                    <div class="image-product">
+                        <img src="./image/polo4.1.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">
+                            Áo Polo Nam Cafe Cơi Túi Ngực Phối Cúc
+                        </h3>
+                        <div class="box-price">
+                            <span class="discout-price">
+                                360.000đ
+                            </span>
+                            <span class="compare-price">
+                                379.000đ
+                            </span>
+                        </div>
+                        <div class="option-swath">
+                            <div class="swath-color active">
+                                <img src="./image/polo4.1.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo4.2.jpg" alt="">
+                            </div>
+                            <div class="swath-color">
+                                <img src="./image/polo4.3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</body>
+<script>
+    var swiper = new Swiper(".swiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        }
+    })
+
+    let listSwathColor = document.querySelectorAll('.swath-color')
+
+    listSwathColor.forEach(item =>{
+        item.addEventListener("click", function(e){
+            item.closest(".option-swath").querySelector(".swath-color.active").classList.remove("active")
+            item.classList.add("active")
+            let imageProduct = item.closest(".card-product").querySelector(".image-product img")
+            imageProduct.src = e.target.src
+        })
+    })
+</script>
+</html>
